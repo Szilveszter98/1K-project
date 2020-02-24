@@ -11,6 +11,8 @@
 
 
 ?>
+<center><a href="views/loginForm.php"> Logga in </a> <hr>
+<a href="views/signupForm.php"> Registrera </a> </center>
     
 </body>
 </html>
