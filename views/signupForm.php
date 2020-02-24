@@ -1,8 +1,8 @@
 
 <center>
 <h1>Register
-<form method="POST" action="index.php">
-Username:<input type="text" name="username"><br/>
+<form method="POST" action="../includes/signup.php">
+Username:<input type="text" name="userName"><br/>
 
 First name: <input type="text" name="firstName"></br >
 Last name: <input type="text" name="lastName"></br >
