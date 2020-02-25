@@ -13,7 +13,7 @@ $password = md5($_POST['password']);
 
 
 
-$username = (!empty($_POST['userName']) ? $_POST['userName'] : "");
+$username = (!empty($_POST['username']) ? $_POST['username'] : "");
 $first_name = (!empty($_POST['firstName']) ? $_POST['firstName'] : "");
 $last_name = (!empty($_POST['lastName']) ? $_POST['lastName'] : "");
 $email = (!empty($_POST['email']) ? $_POST['email'] : "");
