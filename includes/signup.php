@@ -5,7 +5,7 @@ include("../includes/database_connection.php");
 
 
 
-$username = $_POST['userName'];
+$username = $_POST['username'];
 $first_name = $_POST['firstName'];
 $last_name = $_POST['lastName'];
 $password = md5($_POST['password']);

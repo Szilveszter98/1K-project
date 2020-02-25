@@ -2,7 +2,7 @@
 <center>
 <h1>Register
 <form method="POST" action="../includes/signup.php">
-Username:<input type="text" name="userName"><br/>
+Username:<input type="text" name="username"><br/>
 
 First name: <input type="text" name="firstName"></br >
 Last name: <input type="text" name="lastName"></br >
