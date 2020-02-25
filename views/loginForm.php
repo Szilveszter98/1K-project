@@ -1,6 +1,6 @@
 <center><form method="POST" action="login.php">
 Username:<br>
-<input type="text" name="username" required><br/>
+<input type="text" name="userName" required><br/>
 <hr>
 
 Password:<br>

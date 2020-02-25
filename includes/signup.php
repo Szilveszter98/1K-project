@@ -11,7 +11,7 @@ $last_name = $_POST['lastName'];
 $password = md5($_POST['password']);
 
 
-$username = (!empty($_POST['username']) ? $_POST['username'] : "");
+$username = (!empty($_POST['userName']) ? $_POST['userName'] : "");
 $first_name = (!empty($_POST['firstName']) ? $_POST['firstName'] : "");
 $last_name = (!empty($_POST['lastName']) ? $_POST['lastName'] : "");
 $password = (!empty($_POST['password']) ? $_POST['password'] : "");
