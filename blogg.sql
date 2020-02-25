@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1
--- Tid vid skapande: 24 feb 2020 kl 13:09
+-- Tid vid skapande: 25 feb 2020 kl 09:10
 -- Serverversion: 10.4.11-MariaDB
 -- PHP-version: 7.4.1
 
@@ -60,8 +60,10 @@ CREATE TABLE `comments` (
 
 CREATE TABLE `user` (
   `ID` int(11) NOT NULL,
-  `First_name` varchar(50) NOT NULL,
-  `Last_name` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `firstName` varchar(50) NOT NULL,
+  `lastName` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
   `Password` varchar(50) NOT NULL,
   `Role` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -70,8 +72,10 @@ CREATE TABLE `user` (
 -- Dumpning av Data i tabell `user`
 --
 
-INSERT INTO `user` (`ID`, `First_name`, `Last_name`, `Password`, `Role`) VALUES
-(1, 'Szilveszter', 'Mag', '123asd', 'Admin');
+INSERT INTO `user` (`ID`, `username`, `firstName`, `lastName`, `email`, `Password`, `Role`) VALUES
+(1, '', 'Szilveszter', 'Mag', '', '123asd', 'Admin'),
+(6, 'Andreas', 'ja', 'ja', '', 'ja', ''),
+(7, 'silver', 'silver', 'mag', 'silver@gmail.com', '123asd', '');
 
 --
 -- Index för dumpade tabeller
@@ -115,7 +119,7 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT för tabell `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
