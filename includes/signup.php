@@ -51,6 +51,16 @@ if($errors= true){
 
 }
 
+
+$username = $_SESSION['username'];
+$query = "SELECT * from user where username = '$username'";
+$sth = $dbh->prepare($query);
+$return = $sth->execute();
+echo "<h1> Det finns". $sth->rowCount() ."med användarnamnet $username</h1><br/>";
+
+ 
+
+
 $query =" INSERT INTO user (username, firstName,lastName, email, password) VALUES('$username','$first_name','$last_name', '$email','$password');";
 $return = $dbh->exec($query);
 if(!$return){
