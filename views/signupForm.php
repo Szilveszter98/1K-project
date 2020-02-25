@@ -3,7 +3,7 @@
 <h1>
 Register
 <form method="POST" action="../includes/signup.php">
-Username:<input type="text" name="userName"required><br/>
+Username:<input type="text" name="username"required><br/>
 
 First name: <input type="text" name="firstName" required></br >
 Last name: <input type="text" name="lastName" required></br >

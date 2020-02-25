@@ -11,6 +11,11 @@
     <h1 class="middleText">Please log in or register to see the blog's content</h1>
 
 <?php 
+if (isset($_GET['err']) && $_GET['err'] == true){
+    echo "error";
+}
+
+
 
 ?>
 <center><a href="views/loginForm.php"> Log in </a> <hr>

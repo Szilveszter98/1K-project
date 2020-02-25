@@ -1,26 +1,48 @@
 <?php 
-$username = $_POST['userName'];
-$password = $_POST['password'];
+include("database_connection.php");
 
-$username = (!empty($_POST['userName'])? $_POST['userName'] : "");
-$password = (!empty($_POST['password'])? $_POST['password'] : "");
 
-$errors=falese;
-$errorMasseges="";
-if(isset($_GET['action']) && $_GET['action']){
-    if(empty($username)){
-        $errorMasseges.="fyll";
-        $errors = true;
-    }
-    if(empty($password)){
-        $errorMasseges.="fyll";
-        $errors = true;
-    }
-    if($errors= true){
-        echo $errorMasseges;
-        die;
-    }
+
+
+
+$username = $_POST['username'];
+$password = ($_POST['password']);
+
+$query = "SELECT ID, username, Password FROM user WHERE username='$username' AND Password='$password'";
+
+$return = $dbh->query($query);
+
+
+$row = $return->fetch(PDO::FETCH_ASSOC);
+
+
+
+
+
+if(empty($row)){
+   
+    header("location:../blog.php?err=true");
+    echo "Du kan inte logga in";
+} else {
+  
+  
+    session_start();
+
+    $_SESSION['username'] = $row['username'];
+    $_SESSION['password'] = $row['password'];
+    
+
+
+    header("location:../blog.php");
+
+
+
+
+
+    
 }
-$quary =" SELECT ID, username, password FROM blogg WHERE username='$username' and password='$password'";
+
+ 
+
 
 ?>
