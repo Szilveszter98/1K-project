@@ -18,8 +18,10 @@ if(isset($_SESSION['username'])){
 }
    
 
+?>
 
 
+<<<<<<< HEAD
 $Posts = new blogposts($dbh);
 $Posts->fetchAll();
 
@@ -31,15 +33,41 @@ foreach($Posts->getPosts() as $post){
     echo "<a href=\"uppgift1.php?action=delete&id=" . $row['id'] . "\" >Delete!</a>";
     echo "<hr/>";
 }
-
-
-?>
-
-
-
-
-
+=======
 <body>
     
+<form method="POST" action="includes/handlecomments.php">
+<textarea name="comment" cols="60" rows="10">write your comment...</textarea> <br />
+<br />
+<input type="submit" value="skicka!" />
+</form>
+
+<?php
+>>>>>>> 2b7c68dbe61493df0dc6003e571e814b6bd37849
+
+
+include("classes/comments.php");
+
+$Comments = new blogcomments($dbh);
+$Comments->fetchAll();
+
+    foreach( $Comments->getComments() as $comment ) {
+        echo "<hr />";
+        echo "<h3>inlägg:</h3>";
+        echo "<b> Name:</b>";
+        echo $comment['name']. "<br />";
+        echo "<b> Message:</b>";
+        echo $comment ['message']. "<br />";
+        echo "<br />";
+        echo $comment ['date_posted'] . "<br />";
+        echo "<a href=\"handlecomments.php?action=delete&id=" . $comment['id'] ."\">Delete!</a>";
+
+
+    }
+
+    
+
+    ?>
+
 </body>
 </html>
