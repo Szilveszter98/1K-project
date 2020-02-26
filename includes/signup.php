@@ -5,19 +5,12 @@ include("../includes/database_connection.php");
 
 
 
-$username = $_POST['username'];
-$first_name = $_POST['firstName'];
-$last_name = $_POST['lastName'];
-$email = $_POST['email'];
-$password = md5($_POST['password']);
-
-
 
 $username = (!empty($_POST['username']) ? $_POST['username'] : "");
 $first_name = (!empty($_POST['firstName']) ? $_POST['firstName'] : "");
 $last_name = (!empty($_POST['lastName']) ? $_POST['lastName'] : "");
 $email = (!empty($_POST['email']) ? $_POST['email'] : "");
-$password = (!empty($_POST['password']) ? $_POST['password'] : "");
+$password = (!empty($_POST['password']) ? md5($_POST['password']) : "");
 
 
 //kollar om username finns redan    

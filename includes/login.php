@@ -6,7 +6,7 @@ include("database_connection.php");
 
 
 $username = $_POST['username'];
-$password = ($_POST['password']);
+$password = md5($_POST['password']);
 
 $query = "SELECT ID, username, Password FROM user WHERE username='$username' AND Password='$password'";
 

@@ -20,7 +20,17 @@ if(isset($_SESSION['username'])){
 
 
 
+$Posts = new blogposts($dbh);
+$Posts->fetchAll();
 
+foreach($Posts->getPosts() as $post){
+    
+    echo "<span>  Namn: </span>" . " " . $row['namn']. "<br/>";
+    echo "<span>  Message: </span>" . " " . $row['Message']. "<br/>";
+    echo "<span>  Posted:    </span>" . " " . $row['Date_posted']. "<br/>";
+    echo "<a href=\"uppgift1.php?action=delete&id=" . $row['id'] . "\" >Delete!</a>";
+    echo "<hr/>";
+}
 
 
 ?>
