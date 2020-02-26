@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <?php 
+
 include("includes/database_connection.php");
 
 session_start();
@@ -18,7 +19,7 @@ if(isset($_SESSION['username'])){
 }
    
 
-?>
+
 
 
 $Posts = new blogposts($dbh);
@@ -32,15 +33,8 @@ foreach($Posts->getPosts() as $post){
     echo "<a href=\"uppgift1.php?action=delete&id=" . $row['id'] . "\" >Delete!</a>";
     echo "<hr/>";
 }
-<body>
-    
-<form method="POST" action="includes/handlecomments.php">
-<textarea name="comment" cols="60" rows="10">write your comment...</textarea> <br />
-<br />
-<input type="submit" value="skicka!" />
-</form>
 
-<?php
+
 
 
 include("classes/comments.php");
@@ -65,6 +59,13 @@ $Comments->fetchAll();
     
 
     ?>
-
+<body>
+    
+    <form method="POST" action="includes/handlecomments.php">
+    <textarea name="comment" cols="60" rows="10">write your comment...</textarea> <br />
+    <br />
+    <input type="submit" value="skicka!" />
+    </form>
+    
 </body>
 </html>
