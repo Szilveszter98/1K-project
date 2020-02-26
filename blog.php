@@ -23,5 +23,37 @@ if(isset($_SESSION['username'])){
 
 <body>
     
+<form method="POST" action="includes/handlecomments.php">
+<textarea name="comment" cols="60" rows="10">write your comment...</textarea> <br />
+<br />
+<input type="submit" value="skicka!" />
+</form>
+
+<?php
+
+
+include("classes/comments.php");
+
+$Comments = new blogcomments($dbh);
+$Comments->fetchAll();
+
+    foreach( $Comments->getComments() as $comment ) {
+        echo "<hr />";
+        echo "<h3>inlägg:</h3>";
+        echo "<b> Name:</b>";
+        echo $comment['name']. "<br />";
+        echo "<b> Message:</b>";
+        echo $comment ['message']. "<br />";
+        echo "<br />";
+        echo $comment ['date_posted'] . "<br />";
+        echo "<a href=\"handlecomments.php?action=delete&id=" . $comment['id'] ."\">Delete!</a>";
+
+
+    }
+
+    
+
+    ?>
+
 </body>
 </html>
