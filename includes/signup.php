@@ -18,9 +18,47 @@ $first_name = (!empty($_POST['firstName']) ? $_POST['firstName'] : "");
 $last_name = (!empty($_POST['lastName']) ? $_POST['lastName'] : "");
 $email = (!empty($_POST['email']) ? $_POST['email'] : "");
 $password = (!empty($_POST['password']) ? $_POST['password'] : "");
+
+
+//kollar om username finns redan    
+$query_username = "SELECT * from user where username = '$username'";
+
+$sth_username = $dbh->prepare($query_username);
+$return_username= $sth_username->execute();
+
+//kollar om email finn redan
+$query_email = "SELECT * from user where email = '$email'";
+
+$sth_email = $dbh->prepare($query_email);
+$return_email= $sth_email->execute();
+
+
+
+
+
+
+
+if($sth_username->rowcount() > 0){
     
+    echo "<center><h2> Användarnamnet eller mailen finns redan i systemet</h2></center>";
+    echo "<center><a href='../views/signupForm.php'>Please try again!</a></center>";
+    die;
+} else{
+    $query =" INSERT INTO user (username, firstName,lastName, email, password) VALUES('$username','$first_name','$last_name', '$email','$password');";
+    $return = $dbh->exec($query);
+    if(!$return){
+        print_r($dbh->errorInfo());
+    }
+    echo "Welcome '$username'! Nu är du registrerad!";
+}
+
+
+
+
 $errors= false;
 $errorMessages= "";
+
+
 if(isset($_GET['action']) && $_GET['action']){
 if(empty($username)){
     $errorMessages.="Du måste ange ett användar namn!";
@@ -52,21 +90,8 @@ if($errors= true){
 }
 
 
-$username = $_SESSION['username'];
-$query = "SELECT * from user where username = '$username'";
-$sth = $dbh->prepare($query);
-$return = $sth->execute();
-echo "<h1> Det finns". $sth->rowCount() ."med användarnamnet $username</h1><br/>";
-
- 
 
 
-$query =" INSERT INTO user (username, firstName,lastName, email, password) VALUES('$username','$first_name','$last_name', '$email','$password');";
-$return = $dbh->exec($query);
-if(!$return){
-    print_r($dbh->errorInfo());
-}
-echo "Nu är du registrerad!"
 
 
 ?>

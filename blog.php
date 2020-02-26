@@ -10,11 +10,11 @@ include("includes/database_connection.php");
 
 session_start();
 if(isset($_SESSION['username'])){
-    echo "hej  " . $_SESSION['username'] . "!<br/>";
-    echo "<a href='includes/logout.php'>Logga ut!</a>";
+    echo "<h1><center>hej  " . $_SESSION['username'] . "!<br/>";
+    echo "<a href='includes/logout.php'>Logga ut!</center></h1></a>";
 }else{
-    echo "något gick fel!";
-    echo "<a href='includes/login.php'>tillbaka till inloggningen!</a>";
+    echo "<h1><center>något gick fel!<center></h1>";
+    echo "<a href='views/loginForm.php'>Please try again!</a>";
 }
    
 
