@@ -4,7 +4,7 @@ session_start();
 
 $title = (!empty($_POST['title']) ? $_POST['title'] :"");
 $description = (!empty($_POST['description']) ? $_POST['description'] : "");
-$blog_contant=(!empty($_POST['blog_contant']) ? $_POST['blog_contant'] : "");
+$blog_content=(!empty($_POST['blog_content']) ? $_POST['blog_content'] : "");
 //pictures=(!empty)
 $category=(!empty($_POST['category']) ? $_POST['category'] : "");
 
@@ -23,7 +23,7 @@ if( empty($description)){
     $errorMessages.= "You need to write a description";
     $errors= true;
     }
-if( empty($lblog_contant)){
+if( empty($lblog_content)){
     $errorMessages.= "You need to write content";
     $errors= true;
     }
@@ -41,7 +41,7 @@ if($errors= true){
 
     
 
-$query =" INSERT blog_posts (  Title, Description, blog_contant, Category, userID) VALUES('$title', '$description', '$blog_contant', '$category', '$userID');";
+$query =" INSERT blog_posts (  Title, Description, blog_content, Category, userID) VALUES('$title', '$description', '$blog_content', '$category', '$userID');";
 $return = $dbh->exec($query);
 if(!$return){
     print_r($dbh->errorInfo());

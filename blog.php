@@ -7,6 +7,7 @@
 </head>
 <?php 
 
+include("classes/Posts.php");
 include("includes/database_connection.php");
 
 session_start();
@@ -63,11 +64,34 @@ $Comments->fetchAll();
 
     } */
 
-    
+    $query = "SELECT  Title, Description, blog_content,	Category,	date_posted, userID FROM blog_posts";
+    $return= $dbh->query($query);
 
-    ?>
-<body>
+    $row =$return->fetchAll(PDO::FETCH_ASSOC);
+
+
+    if(!$return){
+print_r($dbh->errorInfo());
+    }
+    $Posts = new blogposts($dbh);
+    $Posts->fetchAll();
     
-   
+    foreach($Posts->getPosts() as $post){
+  
+    echo "<span>  Namn: </span>" . " " . $post['userID']. "<br/>";
+    echo "<span>  Title: </span>" . " " . $post['Title']. "<br/>"; 
+    echo "<span>  Description:    </span>" . " " . $post['Description']. "<br/>";
+    echo "<span>  Content:    </span>" . " " . $post['blog_content']. "<br/>";
+    echo "<span>  Date:    </span>" . " " . $post['date_posted']. "<br/>";
+    echo "<span>  picture:    </span>" . " " . $post['Pictures']. "<br/>";
+    echo "<span>  Category:    </span>" . " " . $post['Category']. "<br/>";
+    echo "<hr/>";
+    
+    
+}
+        
+
+?>
+<body>
 </body>
 </html>

@@ -12,7 +12,7 @@ Blog
 <form method="POST" action="includes/handleblog.php">
 Title:<input type="text" name="title"required><br/>
 Description: <input type="text" name="description" required></br >
-<textarea name="blog_contant" rows="10" cols="100"></textarea></br >
+<textarea name="blog_content" rows="10" cols="100"></textarea></br >
 Picture: <input type="text" name="picture" ></br >
 Category: <input type="text" name="category" required></br >
 
