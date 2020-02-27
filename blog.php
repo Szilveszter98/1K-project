@@ -64,15 +64,6 @@ $Comments->fetchAll();
 
     } */
 
-    $query = "SELECT  Title, Description, blog_content,	Category,	date_posted, userID FROM blog_posts";
-    $return= $dbh->query($query);
-
-    $row =$return->fetchAll(PDO::FETCH_ASSOC);
-
-
-    if(!$return){
-print_r($dbh->errorInfo());
-    }
     $Posts = new blogposts($dbh);
     $Posts->fetchAll();
     
@@ -88,8 +79,23 @@ print_r($dbh->errorInfo());
     echo "<hr/>";
     
     
-}
-        
+
+    }
+
+    $Comments = new blogcomments($dbh);
+    $Comments->fetchAll();
+    
+    foreach($Comments->getComments() as $comment){
+  
+    echo "<span>  Namn: </span>" . " " . $comment['userID']. "<br/>";
+    echo "<span> Comment: </span>" . " " . $comment['Comment']. "<br/>"; 
+    echo "<span>  Date:    </span>" . " " . $comment['date_posted']. "<br/>";
+ 
+    echo "<hr/>";
+    
+    
+
+    }
 
 ?>
 <body>
