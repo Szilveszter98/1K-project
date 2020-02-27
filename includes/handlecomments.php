@@ -1,18 +1,18 @@
 <?php 
 
 include("database_connection.php");
+session_start();
 
-$comment = $_POST['comment'];
-    
+
 $comment = ( !empty($_POST['comment']) ? $_POST['comment'] : "");
-
-
 $comment = htmlspecialchars($comment);
 
+$userID = $_SESSION['ID'];
 
 $errors = false;
 $errorcomments ="";
 
+if(isset($_GET['action']) && $_GET['action']){
 if ( empty($comment) ) {
     $errorcomments .= "Du måste skriva ett meddelande! <br />";
     $errors = true;
@@ -26,22 +26,17 @@ if ($errors==true) {
     die;
 }
 
+}else{
 
 
-$query = "INSERT INTO comments (Comment) VALUES('$comment');";
-$sth = $dbh->prepare($query);
-//$sth->bindParam(':userID', $name);
-$sth->bindParam(':comment', $comment);
-
-$return = $sth->execute();
-
-if(!$return) {
+$query = "INSERT INTO comments (Comment, userID) VALUES('$comment', $userID);";
+$return = $dbh->exec($query);
+if(!$return){
     print_r($dbh->errorInfo());
-} else {
-    header("location:blog.php");
 }
+echo "your comment is posted!";
 
-print_r($return);
+}
 
 
 ?>

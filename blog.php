@@ -17,10 +17,18 @@ if(isset($_SESSION['username'])){
     echo "<h1><center>något gick fel!<center></h1>";
     echo "<a href='views/loginForm.php'>Please try again!</a>";
 }
-   
+
+if(isset($_SESSION['Role']) && $_SESSION['Role'] == 'Admin'){
+    echo "admin";
+echo "<a href='blogWriter.php'>Write a blog!</a> || <a href='blog.php'>To the blogs!</a>";
+    
+} 
+/* else{
+    echo "user";
+} */ 
 
 
-
+/* include("classes/Posts.php");
 
 $Posts = new blogposts($dbh);
 $Posts->fetchAll();
@@ -35,37 +43,31 @@ foreach($Posts->getPosts() as $post){
 }
 
 
-
+ */
 
 include("classes/comments.php");
+include("views/commentForm.php");
 
-$Comments = new blogcomments($dbh);
+/* $Comments = new blogcomments($dbh);
 $Comments->fetchAll();
 
     foreach( $Comments->getComments() as $comment ) {
         echo "<hr />";
         echo "<h3>inlägg:</h3>";
-        echo "<b> Name:</b>";
-        echo $comment['name']. "<br />";
-        echo "<b> Message:</b>";
-        echo $comment ['message']. "<br />";
+      
+        echo $comment ['comment']. "<br />";
         echo "<br />";
         echo $comment ['date_posted'] . "<br />";
         echo "<a href=\"handlecomments.php?action=delete&id=" . $comment['id'] ."\">Delete!</a>";
 
 
-    }
+    } */
 
     
 
     ?>
 <body>
     
-    <form method="POST" action="includes/handlecomments.php">
-    <textarea name="comment" cols="60" rows="10">write your comment...</textarea> <br />
-    <br />
-    <input type="submit" value="skicka!" />
-    </form>
-    
+   
 </body>
 </html>

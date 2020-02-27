@@ -8,12 +8,13 @@ include("database_connection.php");
 $username = $_POST['username'];
 $password = md5($_POST['password']);
 
-$query = "SELECT ID, username, Password FROM user WHERE username='$username' AND Password='$password'";
+$query = "SELECT ID, username, Password, Role FROM user WHERE username='$username' AND Password='$password'";
 
 $return = $dbh->query($query);
 
 
 $row = $return->fetch(PDO::FETCH_ASSOC);
+
 
 
 
@@ -30,6 +31,13 @@ if(empty($row)){
 
     $_SESSION['username'] = $row['username'];
     $_SESSION['password'] = $row['password'];
+    $_SESSION['Role']= $row['Role'];
+    $_SESSION['ID']= $row['ID'];
+
+
+    
+
+
     
 
 
