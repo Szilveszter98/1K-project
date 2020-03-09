@@ -39,14 +39,20 @@ if($errors= true){
 
 } else {
 
-    
+
+
+
 
 $query =" INSERT blog_posts (  Title, Description, blog_content, Pictures, Category, userID) VALUES('$title', '$description', '$blog_content', '$pictures', '$category', '$userID');";
 $return = $dbh->exec($query);
 if(!$return){
     print_r($dbh->errorInfo());
 }
-echo "Your blog is publicated now!";
+echo "<h1>" . $_POST['title'] . "</h1> <br />";
+echo "<h5>" . $_POST['description'] . "</h5> <br />";
+echo "<p>" . $_POST['blog_content'] . "</p> <br />";
+echo "<img src='uploads/" . $_POST['pictures'] . "'> <br />";
+echo "<h5>" . $_POST['category'] . "</h5>";
 
 }
 
