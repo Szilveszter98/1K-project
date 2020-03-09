@@ -46,7 +46,7 @@ $return = $dbh->exec($query);
 if(!$return){
     print_r($dbh->errorInfo());
 }
-echo "IT works!";
+echo "Your blog is publicated now!";
 
 }
 

@@ -76,6 +76,7 @@ $Comments->fetchAll();
     echo "<span>  Date:    </span>" . " " . $post['date_posted']. "<br/>";
     echo "<span>  picture:    </span>" . " " . $post['Pictures']. "<br/>";
     echo "<span>  Category:    </span>" . " " . $post['Category']. "<br/>";
+    
     echo "<hr/>";
     
     

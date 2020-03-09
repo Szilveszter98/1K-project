@@ -16,6 +16,7 @@ Description: <input type="text" name="description" required></br >
 Picture: <input type="file" name="pictures" ></br >
 Category: <input type="text" name="category" required></br >
 
+
 <br/>
 <input type="submit" value="Send" /></h1>
 <hr>
