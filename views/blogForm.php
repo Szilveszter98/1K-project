@@ -11,13 +11,13 @@
 Blog
 <form method="POST" action="includes/handleblog.php">
 Title:<input type="text" name="title"required><br/>
-Description: <input type="text" name="description" required></br >
-<textarea name="blog_content" rows="10" cols="100"></textarea></br >
-Picture: <input type="file" name="pictures" ></br >
-Category: <input type="text" name="category" required></br >
+Description: <input type="text" name="description" required><br />
+<textarea name="blog_content" rows="10" cols="100"></textarea><br />
+Picture: <input type="file" name="pictures" ><br />
+Category: <input type="text" name="category" required><br />
 
 <br/>
-<input type="submit" value="Send" /></h1>
+<input type="submit" name="submit" value="Send" /></h1>
 <hr>
 </form></center>
 </body>
