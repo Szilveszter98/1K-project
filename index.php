@@ -7,8 +7,13 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1 class="mainText">Welcome!</h1> </br>
+
+<div class="headerWrapper">
+
+    <h1 class="mainText">Welcome!</h1>
     <h1 class="middleText">Please log in or register to see the blog's content</h1>
+
+</div>
 
 <?php 
 if (isset($_GET['err']) && $_GET['err'] == true){
