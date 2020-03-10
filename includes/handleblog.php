@@ -1,5 +1,6 @@
 <?php
 include("database_connection.php");
+
 session_start();
 
 $title = (!empty($_POST['title']) ? $_POST['title'] :"");
@@ -51,7 +52,7 @@ if(!$return){
 echo "<h1>" . $_POST['title'] . "</h1> <br />";
 echo "<h5>" . $_POST['description'] . "</h5> <br />";
 echo "<p>" . $_POST['blog_content'] . "</p> <br />";
-echo "<img src='uploads/" . $_POST['pictures'] . "'> <br />";
+echo "<img src=' ../images/" . $_POST['pictures'] . "'> <br />";
 echo "<h5>" . $_POST['category'] . "</h5>";
 
 }

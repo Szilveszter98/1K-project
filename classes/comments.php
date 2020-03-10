@@ -1,7 +1,7 @@
 <?php
 
 include("includes/database_connection.php");
-session_start();
+
 class blogcomments{
     private $databaseHandler;
     private $order = "desc";
