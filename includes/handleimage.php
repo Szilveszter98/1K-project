@@ -9,12 +9,6 @@ session_start();
  if (isset($_POST['submit'])) {
     $pictures = $_FILES['pictures']['name'];
 
-    $title = $_POST['title'];
-    $category = $_POST['category'];
-    $description = $_POST['description'];
-    $blog_content = $_POST['blog_content'];
-    $image = $_POST['pictures'];
-    $userID = $_SESSION['id'];
 
     $fileName = $_FILES['pictures']['name'];
     $fileTmpName = $_FILES['pictures']['tmp_name'];
