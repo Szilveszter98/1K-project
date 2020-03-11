@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+<body>
+<div class="container">    
 <?php 
 
 include("classes/Posts.php");
 include("includes/database_connection.php");
+
 
 session_start();
 if(isset($_SESSION['username'])){
@@ -18,6 +22,7 @@ if(isset($_SESSION['username'])){
     echo "<h1><center>något gick fel!<center></h1>";
     echo "<a href='views/loginForm.php'>Please try again!</a>";
 }
+
 
 if(isset($_SESSION['Role']) && $_SESSION['Role'] == 'Admin'){
     echo "admin";
@@ -98,6 +103,6 @@ $Comments->fetchAll();
     }
 
 ?>
-<body>
+</div>
 </body>
 </html>
