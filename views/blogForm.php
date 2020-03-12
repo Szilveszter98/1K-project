@@ -15,8 +15,13 @@ Title:<input type="text" name="title"required><br/>
 Description: <input type="text" name="description" required><br />
 <textarea name="blog_content" rows="20" cols="100"></textarea><br />
 Picture: <input class="submitWritePostFile" type="file" name="pictures" ><br />
-Category: <input type="text" name="category" required><br />
-
+<label for="category">Choose a category:</label>
+<select id="category" name="category">
+  <option value="food">food</option>
+  <option value="animals">animals</option>
+  <option value="everyday">everyday</option>
+  <option value="buisness">buisness</option>
+</select>
 <br/>
 <input class="submitWritePost" type="submit" name="submit" value="Send" /></h1>
 <hr>
