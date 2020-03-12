@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+<div class="container">  
 <center>
 <h1 class="textToWritePost">
 Blog
@@ -26,6 +27,8 @@ Picture: <input class="submitWritePostFile" type="file" name="pictures" ><br />
 <input class="submitWritePost" type="submit" name="submit" value="Send" /></h1>
 <hr>
 </form></center>
+
+</div>
 </body>
 </html>
 

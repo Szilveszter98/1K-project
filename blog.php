@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="container">    
+<div class="container">  
+<center>
+
 <?php 
 
 include("classes/Posts.php");
@@ -16,8 +18,8 @@ include("includes/database_connection.php");
 
 session_start();
 if(isset($_SESSION['username'])){
-    echo "<h1><center>hej  " . $_SESSION['username'] . "!<br/>";
-    echo "<a href='includes/logout.php'>Logga ut!</center></h1></a>";
+    echo "<h1 class='blogHeaderText'><center>Hello  " . $_SESSION['username'] . "!<br/>";
+    echo "<a class='signoutBlogPage' href='includes/logout.php'>Sign out!</center></h1></a>";
 }else{
     echo "<h1><center>något gick fel!<center></h1>";
     echo "<a href='views/loginForm.php'>Please try again!</a>";
@@ -26,7 +28,7 @@ if(isset($_SESSION['username'])){
 
 
 if(isset($_SESSION['Role']) && $_SESSION['Role'] == 'Admin'){
-echo "<h1><a href='views/blogForm.php'>Write a blog!</a></h1> ";
+echo "<h1><a class='writeAblogLink' href='views/blogForm.php'>Write a blog!</a></h1> ";
 
 
 
@@ -60,14 +62,12 @@ foreach($Posts->getPosts() as $post){
     
     foreach($Posts->getPosts() as $post){
   
-    
-    echo "<h1><a href='post.php?id={$post['ID']}'>{$post['Title']} | {$post['date_posted']}</a></h1>";
+    echo "<div id='titlesBlogPostsDiv'>";
+    echo "<h1><a href='post.php?id={$post['ID']}'>{$post['Title']}</a></h1>";
+    echo "</div>";
     if(isset($_SESSION['Role']) && $_SESSION['Role'] == 'Admin'){
         
     }
-
-    echo "<hr/>";
-    
     
 
     }
@@ -75,6 +75,7 @@ foreach($Posts->getPosts() as $post){
    
 
 ?>
+</center>
 </div>
 </body>
 </html>

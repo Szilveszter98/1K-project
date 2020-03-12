@@ -1,5 +1,7 @@
 body{
-  background: url(../uploads/keyboard-desk-wristwatch-watch-8264.jpg)
+  background: url(../uploads/keyboard-desk-wristwatch-watch-8264.jpg);
+  /*background-size:cover;
+  background-repeat: no-repeat;*/
   
 }
 .container {
@@ -9,7 +11,12 @@ body{
   width:80%;
   margin-right: auto;
   margin-left: auto;
+  padding-bottom:150px;
 
+}
+
+a:link {
+  text-decoration: none;
 }
 
 /* Start css code for index page */
@@ -21,6 +28,8 @@ body{
 }
 
 .headerText{
+  border: 1px solid black;
+  margin: 5px;
   text-align: center;
 }
 
@@ -71,12 +80,12 @@ body{
 .headerWrapperSignIn {
   padding:20px;
   font-family: Arial, Helvetica, sans-serif;
-  border-bottom: solid 1px;
   color: #445663;
 
 }
 
 .mainTextsignIn {
+    font-family: Arial, Helvetica, sans-serif;
     color: black;
     font-size: 30px;
     
@@ -163,8 +172,6 @@ body{
 
 /* End css code for signupForm page */
 
-/* Start css code for blog page */
-
 
 /* Start css code for blogWriter page */
 
@@ -194,3 +201,145 @@ body{
   padding:10px; 
 }
 
+/* Start css code for blog page */
+
+.blogHeaderText {
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top:3rem;
+  color: black;
+  font-size: 40px;
+  margin: 40px;
+
+}
+
+
+.signoutBlogPage{
+  box-shadow: 5px 5px #888888;
+  background: #445663;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:13px;
+  color: white;
+  border: solid 1px black;
+  padding:10px; 
+}
+
+.writeAblogLink {
+  box-shadow: 5px 5px #888888;
+  background: #445663;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:20px;
+  color: white;
+  border: solid 1px black;
+  padding:10px; 
+}
+
+
+#titlesBlogPostsDiv {
+  
+  font-family: Arial, Helvetica, sans-serif;
+  
+  color: black;
+  font-size: 20px;
+  
+}
+
+
+#titlesBlogPostsDiv a:link { color: black; }
+#titlesBlogPostsDiv a:visited { color: grey; }
+#titlesBlogPostsDiv a:hover{ color:#445663; }
+
+/* Start css code for post page */
+
+.blogPostedDiv {
+  padding:20px;
+}
+
+.blogContent {
+  font-family: 'Times New Roman', Times, serif;
+  color:rgb(80, 80, 80);
+  padding-left:50px;
+  padding-right:50px;
+}
+
+.postedTitle {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  font-size: 50px;
+}
+
+
+.commentsPostedDiv {
+  margin-top:20px;
+  background: #4456632a;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding:20px;
+  
+}
+
+#categoryPostedDiv {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+/*#categoryPostedDiv a:link { color: black; }
+#categoryPostedDiv a:visited { color:grey; }
+#categoryPostedDiv a:hover { color:#445663; } */
+
+
+.deleteBtn {
+  box-shadow: 5px 5px #888888;
+  background: #445663;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:10px;
+  color: white;
+  border: solid 1px black;
+  padding:10px; 
+
+}
+
+.updateBtn {
+  box-shadow: 5px 5px #888888;
+  background: #445663;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:10px;
+  color: white;
+  border: solid 1px black;
+  padding:10px; 
+  margin-left:20px;
+}
+
+
+.sendCommentBtn {
+  background: #445663;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:13px;
+  color: white;
+  padding:8px; 
+}
+
+
+.containerPost {
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 5px 5px #888888;
+  background:white;
+  width:80%;
+  margin-right: auto;
+  margin-left: auto;
+  
+
+}
+
+.postedCommentsDiv {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+.commentsPostedDiv a:link { color: #445663; }
+.commentsPostedDiv a:visited { color:grey; }
+.commentsPostedDiv a:hover { color:grey; }
+
+.commentDate{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:12px;
+}

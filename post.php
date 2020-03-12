@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    
 </head>
 <body>
+<div class="containerPost">      
 <?php 
 include("classes/Posts.php");
 include("includes/database_connection.php");
@@ -27,25 +30,30 @@ $query = "SELECT * FROM blog_posts WHERE ID=:id LIMIT 1";
     $post= $sth->fetch();
 
 
-
-    echo "<p>";
+    
+    echo "<div class='blogPostedDiv'>";
       
-    echo "<span>  Namn: </span>" . " " . $post['userID']. "<br/>";
-    echo "<span>  Title: </span>" . " " . $post['Title']. "<br/>";
-    echo "<span>  Description: </span>" . " " . $post['Description']. "<br/>";
-    echo "<span</span>" . " " . $post['blog_content']. "<br/>";
+    echo "<center>";
+    echo "<span class='postedTitle'>" . " " . $post['Title']. "<br/> </span> <br/>";
+    echo "<span>  Description: </span>" . " " . $post['Description']. "<br/> <br />";
+    echo "<span class='blogContent'>" . " " . $post['blog_content']. "<br/></span>";
     echo "<span></span>" . " " . $post['Pictures']. "<br/>";
+    
+    echo "</center>";
+
+    echo "<div id='categoryPostedDiv'>";
     echo "<span> Category: </span>" . " " . $post['Category']. "<br/>";
     
     echo "<span>  Posted:    </span>" . " " . $post['date_posted']. "<br/>";
-  
+    
+    echo "<br/>";
 
     
     if(isset($_SESSION['Role']) && $_SESSION['Role'] == 'Admin'){
-        print_r($post['ID']);
-        echo "<a href='includes/handleblog.php?action=delete&id=" . $post['ID'] . "'>Delete</a></br>";
-        echo "<a href='includes/editpost.php?action=update&id=" . $post['ID'] . "'>Update</a>";
-
+        
+        echo "<a class='deleteBtn' href='includes/handleblog.php?action=delete&id=" . $post['ID'] . "'>Delete</a>";
+        echo "<a class='updateBtn' href='includes/editpost.php?action=update&id=" . $post['ID'] . "'>Update</a>";
+        echo "</div>";
 
        
 
@@ -61,12 +69,14 @@ $query = "SELECT * FROM blog_posts WHERE ID=:id LIMIT 1";
 
 
 
-    echo "</p>";
+    echo "</div>";
 
-    echo "<h1> Write a comment</h1>";
+    echo "<div class='commentsPostedDiv'>";
+
+    echo "<p> Write a comment</p>";
     include("views/commentForm.php");
 
-echo "<h1>Comments</h1>";
+echo "<p>Comments</p>";
     $comment_query = "SELECT * FROM comments WHERE blog_postsID=:blog_postsID ";
     $id = $_GET['id'];
     $sth = $dbh->prepare($comment_query);
@@ -79,18 +89,22 @@ echo "<h1>Comments</h1>";
 
 
 while($comment= $sth->fetch()){
-
+    
+    echo"<div class='postedCommentsDiv'>";
   
-    echo "<span class>  Namn: </span>" . " " . $comment['userID']. "<br/>";
+    echo "<span>  Name: </span>" . " " . $comment['userID']. "<br/>";
     echo "<span> Comment: </span>" . " " . $comment['Comment']. "<br/>"; 
-    echo "<span>  Date:    </span>" . " " . $comment['date_posted']. "<br/>";
+    echo "<span class='commentDate'> " . " " . $comment['date_posted']. "<br/> </span>";
     if(isset($_SESSION['Role']) && $_SESSION['Role'] == 'Admin'){
-        echo "<a href='includes/handlecomments.php?action=deletecomment&id=" . $post['ID'] . "'>Delete Comment</a></br>";
+        echo "<a class='deleteComment' href='includes/handlecomments.php?action=deletecomment&id=" . $post['ID'] . "'>Delete</a></br>";
  
     }
     echo "<hr/>";
    
     } 
+
+    echo "</div>";
+    echo "</div>";
 
       
 
@@ -98,6 +112,7 @@ while($comment= $sth->fetch()){
 
 
 ?>
-    
+
+</div>    
 </body>
 </html>
