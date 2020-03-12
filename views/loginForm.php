@@ -39,10 +39,8 @@ Password:<br>
 </b>
 
 
-</center>
-
-
 </form>
+</center>
 
 </div>
 

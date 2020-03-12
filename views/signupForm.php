@@ -10,7 +10,7 @@
 <body>
 <div class="container">
 <center>
-<h1 class="mainTextRegister"> Please register an account to create a blog </h1>    
+<h1 class="mainTextRegister"> Please register an account to view the blog's!</h1>    
 
 <form class="registerForms" method="POST" action="../includes/signup.php">
 Username:<br />
