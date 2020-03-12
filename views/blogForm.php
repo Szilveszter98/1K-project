@@ -10,7 +10,7 @@
 <center>
 <h1 class="textToWritePost">
 Blog
-<form method="POST" action="includes/handleblog.php">
+<form method="POST" action="../includes/handleblog.php" >
 Title:<input type="text" name="title"required><br/>
 Description: <input type="text" name="description" required><br />
 <textarea name="blog_content" rows="20" cols="100"></textarea><br />
