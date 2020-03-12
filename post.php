@@ -32,8 +32,13 @@ $query = "SELECT * FROM blog_posts WHERE ID=:id LIMIT 1";
       
     echo "<span>  Namn: </span>" . " " . $post['userID']. "<br/>";
     echo "<span>  Title: </span>" . " " . $post['Title']. "<br/>";
+    echo "<span>  Description: </span>" . " " . $post['Description']. "<br/>";
+    echo "<span</span>" . " " . $post['blog_content']. "<br/>";
+    echo "<span></span>" . " " . $post['Pictures']. "<br/>";
+    echo "<span> Category: </span>" . " " . $post['Category']. "<br/>";
+    
     echo "<span>  Posted:    </span>" . " " . $post['date_posted']. "<br/>";
-    echo "<span name='ID'>  ID:    </span>" . " " . $post['ID']. "<br/>";
+  
 
     
     if(isset($_SESSION['Role']) && $_SESSION['Role'] == 'Admin'){
@@ -75,9 +80,8 @@ echo "<h1>Comments</h1>";
 
 while($comment= $sth->fetch()){
 
-    
   
-    echo "<span>  Namn: </span>" . " " . $comment['userID']. "<br/>";
+    echo "<span class>  Namn: </span>" . " " . $comment['userID']. "<br/>";
     echo "<span> Comment: </span>" . " " . $comment['Comment']. "<br/>"; 
     echo "<span>  Date:    </span>" . " " . $comment['date_posted']. "<br/>";
     if(isset($_SESSION['Role']) && $_SESSION['Role'] == 'Admin'){
