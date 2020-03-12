@@ -1,16 +1,196 @@
-*{
-    margin: 0;
-    padding: 0;
-}
 body{
-    background-color: #a0b7c7;
-}
-.mainText{
-    
-  text-align: center;
+  background: url(../uploads/keyboard-desk-wristwatch-watch-8264.jpg)
   
-	
 }
-.middleText{
- text-align: center;
+.container {
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 5px 5px #888888;
+  background:white;
+  width:80%;
+  margin-right: auto;
+  margin-left: auto;
+
 }
+
+/* Start css code for index page */
+.headerWrapper{
+  font-family: Arial, Helvetica, sans-serif;
+  border-bottom: solid 1px;
+  color: #445663;
+  
+}
+
+.headerText{
+  text-align: center;
+}
+
+.mainText {
+  padding-top:2rem;
+  color: black;
+  letter-spacing: 8px;
+  font-size: 50px;
+  margin: 40px;
+}
+
+.midText {
+  font-size: 15px;
+}
+
+
+.loginForms{ 
+  padding-bottom:350px;
+  margin-top:40px;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+
+.loginForm {
+  box-shadow: 5px 5px #888888;
+  background: #445663;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  border: solid 1px black;
+  padding:10px; 
+}
+
+.signupForm {
+  box-shadow: 5px 5px #888888;
+  background: #445663;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  border: solid 1px black;
+  padding:10px; 
+}
+
+/* End css code for index page */
+
+/* Start css code for loginForm page */
+
+.headerWrapperSignIn {
+  padding:20px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-bottom: solid 1px;
+  color: #445663;
+
+}
+
+.mainTextsignIn {
+    color: black;
+    font-size: 30px;
+    
+  }
+
+
+.loginPageForms {
+  padding:50px;
+  justify-content: column; 
+}
+
+.usernameForm {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:20px;
+  padding:10px;
+
+}
+
+.passwordForm {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:20px;
+  padding:10px;
+}
+
+.submit {
+  
+  box-shadow: 5px 5px #888888;
+  background: #445663;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:15px;
+  color: white;
+  border: solid 1px black;
+  padding:10px; 
+  margin:10px;
+}
+
+.account {
+  margin-top:40px;
+  margin-bottom:20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:20px;
+}
+
+.signUp {
+  box-shadow: 5px 5px #888888;
+  background: #445663;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:13px;
+  color: white;
+  border: solid 1px black;
+  padding:10px; 
+  
+}
+
+/* End css code for loginForm page */
+
+/* Start css code for signupForm page */
+
+.mainTextRegister {
+  padding-top: 3rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+    font-size: 30px;
+}
+
+.registerForms {
+  padding:20px;
+  margin:50px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:20px;
+  
+}
+
+.registerSubmit {
+  margin-top:15px;
+  box-shadow: 5px 5px #888888;
+  background: #445663;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:13px;
+  color: white;
+  border: solid 1px black;
+  padding:10px; 
+}
+
+/* End css code for signupForm page */
+
+/* Start css code for blog page */
+
+
+/* Start css code for blogWriter page */
+
+.textToWritePost {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.submitWritePost {
+  margin-top:15px;
+  box-shadow: 5px 5px #888888;
+  background: #445663;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:13px;
+  color: white;
+  border: solid 1px black;
+  padding:10px; 
+}
+
+.submitWritePostFile {
+  margin-top:15px;
+  box-shadow: 5px 5px #888888;
+  background: #445663;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:13px;
+  color: white;
+  border: solid 1px black;
+  padding:10px; 
+}
+

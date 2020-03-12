@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+<body>
+<div class="container">    
 <?php 
 
 include("classes/Posts.php");
 include("includes/database_connection.php");
+
 
 session_start();
 if(isset($_SESSION['username'])){
@@ -19,6 +23,7 @@ if(isset($_SESSION['username'])){
     echo "<a href='views/loginForm.php'>Please try again!</a>";
     die;
 }
+
 
 if(isset($_SESSION['Role']) && $_SESSION['Role'] == 'Admin'){
 echo "<h1><a href='views/blogForm.php'>Write a blog!</a></h1> ";
@@ -70,6 +75,6 @@ foreach($Posts->getPosts() as $post){
    
 
 ?>
-<body>
+</div>
 </body>
 </html>

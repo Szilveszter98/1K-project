@@ -1,18 +1,45 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="container">
 <center>
-<h1>
-Register
-<form method="POST" action="../includes/signup.php">
-Username:<input type="text" name="username"required><br/>
+<h1 class="mainTextRegister"> Please register an account to view the blog's!</h1>    
 
-First name: <input type="text" name="firstName" required></br >
-Last name: <input type="text" name="lastName" required></br >
-Mail: <input type="email" name="email" required></br >
+<form class="registerForms" method="POST" action="../includes/signup.php">
+Username:<br />
+<input type="text" name="username"required>
+<br />
 
-Password:<input type="password" name="password"required><br/>
-<br/>
-<input type="submit" value="Registrera" /></h1>
-<hr>
-</form></center>
+First name:<br /> 
+<input type="text" name="firstName" required>
+<br />
+Last name: <br />
+<input type="text" name="lastName" required>
+<br />
+
+Password: <br />
+<input type="password" name="password"required>
+<br />
+E-mail: <br />
+<input type="email" name="email" required>
+<br />
+
+<b>
+<input class="registerSubmit" type="submit" value="Register" /></b>
+</form>
+
+</center>
+
+</div> 
+</body>
+</html>
+
     
-<?php
+
