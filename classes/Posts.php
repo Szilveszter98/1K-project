@@ -6,8 +6,6 @@ include("includes/database_connection.php");
 
 
 
-
-
 class blogposts {
     private $databaseHandler;
     private $order = "desc";
@@ -20,7 +18,7 @@ class blogposts {
     }
 
     public function fetchAll() {
-        $query ="SELECT Title, Description, blog_content, Category, Pictures, date_posted, userID  FROM blog_posts ";
+        $query ="SELECT  *  FROM blog_posts ";
 
         $return_array = $this->databaseHandler->query($query);
         $return_array = $return_array->fetchAll(PDO::FETCH_ASSOC);

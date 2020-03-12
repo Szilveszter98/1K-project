@@ -1,7 +1,23 @@
 <?php
 include("database_connection.php");
-
 session_start();
+
+
+
+if(isset($_GET['action']) && $_GET['action'] == "delete"){
+    // $id =(!empty($_GET['ID']) ? $_GET['ID'] : "");
+    $postID = $_GET['id'];
+     $query = "DELETE FROM blog_posts WHERE id=" . $_GET['id'];" DELETE FROM comments WHERE id=" .$_GET['id'];
+     $exequte = $dbh->exec($query);
+   
+     
+
+  
+  
+     header("location:../blog.php");
+  
+  
+}else{
 
 $title = (!empty($_POST['title']) ? $_POST['title'] :"");
 $description = (!empty($_POST['description']) ? $_POST['description'] : "");
@@ -52,10 +68,10 @@ if(!$return){
 echo "<h1>" . $_POST['title'] . "</h1> <br />";
 echo "<h5>" . $_POST['description'] . "</h5> <br />";
 echo "<p>" . $_POST['blog_content'] . "</p> <br />";
-echo "<img src=' ../images/" . $_POST['pictures'] . "'> <br />";
+echo "<img src='uploads/" . $_POST['pictures'] . "'> <br />";
 echo "<h5>" . $_POST['category'] . "</h5>";
 
 }
 
-
+}
 ?>

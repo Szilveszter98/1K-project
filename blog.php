@@ -17,19 +17,20 @@ if(isset($_SESSION['username'])){
 }else{
     echo "<h1><center>något gick fel!<center></h1>";
     echo "<a href='views/loginForm.php'>Please try again!</a>";
+    die;
 }
 
 if(isset($_SESSION['Role']) && $_SESSION['Role'] == 'Admin'){
-    echo "admin";
-echo "<a href='blogWriter.php'>Write a blog!</a> || <a href='blog.php'>To the blogs!</a>";
+echo "<h1><a href='views/blogForm.php'>Write a blog!</a></h1> ";
+
+
+
+
     
 } 
-/* else{
-    echo "user";
-} */ 
 
 
-/* include("classes/Posts.php");
+/* 
 
 $Posts = new blogposts($dbh);
 $Posts->fetchAll();
@@ -46,57 +47,27 @@ foreach($Posts->getPosts() as $post){
 
  */
 
-include("classes/comments.php");
-include("views/commentForm.php");
-
-/* $Comments = new blogcomments($dbh);
-$Comments->fetchAll();
-
-    foreach( $Comments->getComments() as $comment ) {
-        echo "<hr />";
-        echo "<h3>inlägg:</h3>";
-      
-        echo $comment ['comment']. "<br />";
-        echo "<br />";
-        echo $comment ['date_posted'] . "<br />";
-        echo "<a href=\"handlecomments.php?action=delete&id=" . $comment['id'] ."\">Delete!</a>";
 
 
-    } */
 
     $Posts = new blogposts($dbh);
     $Posts->fetchAll();
     
     foreach($Posts->getPosts() as $post){
   
-    echo "<span>  Namn: </span>" . " " . $post['userID']. "<br/>";
-    echo "<span>  Title: </span>" . " " . $post['Title']. "<br/>"; 
-    echo "<span>  Description:    </span>" . " " . $post['Description']. "<br/>";
-    echo "<span>  Content:    </span>" . " " . $post['blog_content']. "<br/>";
-    echo "<span>  Date:    </span>" . " " . $post['date_posted']. "<br/>";
-    echo "<span>  picture:    </span>" . " " . $post['Pictures']. "<br/>";
-    echo "<span>  Category:    </span>" . " " . $post['Category']. "<br/>";
     
+    echo "<h1><a href='post.php?id={$post['ID']}'>{$post['Title']} | {$post['date_posted']}</a></h1>";
+    if(isset($_SESSION['Role']) && $_SESSION['Role'] == 'Admin'){
+        
+    }
+
     echo "<hr/>";
     
     
 
     }
 
-    $Comments = new blogcomments($dbh);
-    $Comments->fetchAll();
-    
-    foreach($Comments->getComments() as $comment){
-  
-    echo "<span>  Namn: </span>" . " " . $comment['userID']. "<br/>";
-    echo "<span> Comment: </span>" . " " . $comment['Comment']. "<br/>"; 
-    echo "<span>  Date:    </span>" . " " . $comment['date_posted']. "<br/>";
- 
-    echo "<hr/>";
-    
-    
-
-    }
+   
 
 ?>
 <body>
