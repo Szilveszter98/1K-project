@@ -14,7 +14,10 @@ class blogcomments{
     }
 
     public function fetchAll() {
-        $query = "SELECT  Comment, date_posted, userID, blog_postsID FROM comments ";
+
+        
+
+       $query = "SELECT * FROM comments WHERE blog_postsID=:blog_postsID ";
 
         $return_array = $this->databaseHandler->query($query);
         $return_array = $return_array->fetchAll(PDO::FETCH_ASSOC);

@@ -5,12 +5,13 @@ session_start();
 
 if(isset($_GET['action']) && $_GET['action'] == "deletecomment"){
     
-    
-    $postID = $_GET['id'];
-    $comment_query = "DELETE FROM comments WHERE blog_postsID=" . $_GET['id'];  
+    $commentsID= $_GET['id'];
+    $comment_query = "DELETE FROM comments WHERE comments.ID=" . $_GET['id'];  
     $exequte_comment =  $dbh->exec($comment_query);
+ 
     
-    header("location:../blog.php");
+    echo "<h1>The comment is now deleted</h1>";
+    echo "<h1><a href='../blog.php'>Back to the blogs!</a></h1>";
      
 
 
@@ -46,8 +47,15 @@ $return = $dbh->exec($query);
 if(!$return){
     print_r($dbh->errorInfo());
 }
-echo "your comment is posted!";
-print_r($blog_postsID);
+
+
+
+echo "Your comment is publicated";
+echo "<h1><a href='../post.php?id={$_POST['blog_postsID']}'>Back to the blog!</a></h1>";
+
+ 
+ 
+
 
 }
 }

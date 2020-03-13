@@ -18,21 +18,33 @@ session_start();
 if(isset($_SESSION['username'])){
     echo "<h1><center>hej  " . $_SESSION['username'] . "!<br/>";
     echo "<a href='includes/logout.php'>Logga ut!</center></h1></a>";
-}else{
-    echo "<h1><center>något gick fel!<center></h1>";
-    echo "<a href='views/loginForm.php'>Please try again!</a>";
-    die;
-}
+
+    if(isset($_SESSION['Role']) && $_SESSION['Role'] == 'Admin'){
+        echo "<h1><a href='views/blogForm.php'>Write a blog!</a></h1> ";
+        
+        
+        
+        
+            
+        } 
 
 
-if(isset($_SESSION['Role']) && $_SESSION['Role'] == 'Admin'){
-echo "<h1><a href='views/blogForm.php'>Write a blog!</a></h1> ";
-
-
-
-
+    $Posts = new blogposts($dbh);
+    $Posts->fetchAll();
     
-} 
+    foreach($Posts->getPosts() as $post){
+  
+    
+    echo "<h1><a href='post.php?id={$post['ID']}'>{$post['Title']}</a></h1>";
+   
+
+    echo "<hr/>";
+    
+    
+
+    }
+
+
 
 
 /* 
@@ -52,25 +64,14 @@ foreach($Posts->getPosts() as $post){
 
  */
 
+}else{
+    echo "<h1><center>något gick fel!<center></h1>";
+    echo "<a href='views/loginForm.php'>Please try again!</a>";
+    die;
+}
 
 
-
-    $Posts = new blogposts($dbh);
-    $Posts->fetchAll();
     
-    foreach($Posts->getPosts() as $post){
-  
-    
-    echo "<h1><a href='post.php?id={$post['ID']}'>{$post['Title']} | {$post['date_posted']}</a></h1>";
-    if(isset($_SESSION['Role']) && $_SESSION['Role'] == 'Admin'){
-        
-    }
-
-    echo "<hr/>";
-    
-    
-
-    }
 
    
 

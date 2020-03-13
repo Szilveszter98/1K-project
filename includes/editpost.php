@@ -1,33 +1,119 @@
 <?php
-    include("database_connection.php");
-    $a = "";
-    $blog_postsID = (!empty($_GET['ID']) ? $_GET['ID'] : "");
-    if(!empty($_GET['ID'])) {
-        $blog_postID = $_GET['ID'];
-    }
-    if(!empty($_GET['action'])) {
-        $a = $_GET['action']; 
-    }
+    
+    
 
-    if($a == "update") {
-        echo "<pre>";
-        print_r($_POST);
-        echo "</pre>";
-        echo "Updated";
-    }
-$query="UPDATE * FROM blog_posts WHERE ID=:id";
-$return = $dbh->exec($query);
-if(!$return){
-    print_r($dbh->errorInfo());
+include("database_connection.php");
+session_start();
+
+$title = (!empty($_POST['title']) ? $_POST['title'] :"");
+$description = (!empty($_POST['description']) ? $_POST['description'] : "");
+$blog_content=(!empty($_POST['blog_content']) ? $_POST['blog_content'] : "");
+$pictures=(!empty($_POST['pictures']) ? $_POST['pictures'] : "");
+$category=(!empty($_POST['category']) ? $_POST['category'] : "");
+
+$userID = $_SESSION['ID']; 
+$errors= false;
+$errorMessages= "";
+
+
+if(isset($_GET['action']) && $_GET['action'] == "update"){
+
+
+
+
+
+
+if(empty($title)){
+    $errorMessages.="Your blog most have a title!";
+    $errors = true;
 }
-echo "<a href='blog.php'>Back to blogs</a>";
-?>
-<br />
-<b>Uppdatera inlägg #<?php echo $post_ID; ?>:</b><br />
-<form action="editpost.php?action=update" method="POST">
-<input type="text" name="title" placeholder="Titeln här..." /><br />
-<textarea name="textContent" rows="10" cols="50">Text content här...</textarea><br />
-<input type="hidden" name="blog_postsID" value="<?php echo $post['ID'];?>">
-<input type="submit" />
+if( empty($description)){
+    $errorMessages.= "You need to write a description";
+    $errors= true;
+    }
+if( empty($blog_content)){
+    $errorMessages.= "You need to write content";
+    $errors= true;
+    }
+if( empty($category)){
+        $errorMessages.= "Please write a category";
+        $errors= true;
+        }
 
-</form>
+
+
+if($errors== true){
+    echo $errorMessages;
+   
+die;
+}
+
+
+if(isset($_POST['submit'])) {
+    if(!empty($_FILES['pictures']['name'])){
+    $file = $_FILES['pictures'];
+
+
+
+    $fileName = $_FILES['pictures']['name'];
+    $fileTmpName = $_FILES['pictures']['tmp_name'];
+    $fileSize = $_FILES['pictures']['size'];
+    $fileError = $_FILES['pictures']['error'];
+    $fileType = $_FILES['pictures']['type'];
+
+    $fileExt = explode('.', $fileName);
+    $fileActualExt = strtolower(end($fileExt)); 
+
+    $allowed = array('jpg', 'jpeg', 'png');
+
+    
+
+
+    if (in_array($fileActualExt, $allowed)) {
+        if ($fileError === 0) {
+            if ($fileSize < 1000000) {
+                $fileNameNew = uniqid('', true) . "." . $fileActualExt;
+                $fileDestination = '../uploads/' . $fileNameNew;
+                move_uploaded_file($fileTmpName, $fileDestination);
+                
+               
+            } else {
+                echo "Your pictures is to big!";
+            }
+        } else {
+            echo "Det blev ett error vid uppladdningen av filen";
+        }
+    } else {
+    echo "Du kan inte ladda upp filer av denna typ";
+    }
+}
+if(empty($_FILES['pictures']['name'])){
+    $fileNameNew = " ";
+}
+} 
+
+
+
+     $query =" UPDATE blog_posts SET Title=:Title, Description=:Description, blog_content=:blog_content, Pictures=:fileNameNew, Category=:category WHERE ID=" .$_GET['id'];
+    $id = $_GET['id'];
+    $sth = $dbh->prepare($query);
+    $sth->bindParam(':Title', $title);
+    $sth->bindParam(':Description', $description);
+    $sth->bindParam(':blog_content', $blog_content);
+    $sth->bindParam(':fileNameNew', $fileNameNew);
+    $sth->bindParam(':category', $category);
+    
+$return = $sth->execute();
+
+  
+
+  
+ 
+
+header("location:../blog.php");
+
+}
+?>
+
+
+ 

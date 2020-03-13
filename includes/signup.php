@@ -42,7 +42,7 @@ if($sth_username->rowcount() > 0){
     if(!$return){
         print_r($dbh->errorInfo());
     }
-    echo "Welcome '$username'! Nu är du registrerad!";
+    header("location:../index.php");
 }
 
 
