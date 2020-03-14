@@ -12,7 +12,7 @@
 <div class="headerWrapper">
 
 <div class="headerText">
-    <h1 class="mainText"> BLOG'S ONLINE</h1>
+    <h1 class="mainText"> MILLHOUSE BLOG'S </h1>
     <h2 class="midText">Please log in or register to see the blog's content</h2>
 </div>
 

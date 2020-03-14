@@ -16,8 +16,9 @@
 
 <center>
 <div class="headerWrapperSignIn">    
-<h3 class="mainTextsignIn">Please enter your username and password<h3> 
+<h1 class="mainText">MILLHOUSE BLOG'S<h1> 
 </div>
+<h2 class="midText">Please enter your username and password</h2>
 <div class="loginPageForms">
 <div class="usernameForm">    
 <form method="POST" action="../includes/login.php">

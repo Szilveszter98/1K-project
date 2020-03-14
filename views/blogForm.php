@@ -9,8 +9,11 @@
 <body>
 <div class="container">  
 <center>
-<p class="textToWritePost">
-<h1> Start writing your blog! </h1>
+
+<h1 class="mainText"> MILLHOUSE BLOG'S </h1>
+<h3 class="midText"> Start writing your blog! </h3>
+
+<div class="writeBlogForm">
 <form method="POST" action="../includes/handleblog.php"enctype="multipart/form-data" >
 Title:<input type="text" name="title"required><br/> <br/>
 Description: <input type="text" name="description" required><br /> <br/>
@@ -23,11 +26,14 @@ Picture: <input class="submitWritePostFile" type="file" name="pictures" ><br /> 
   <option value="everyday">everyday</option>
   <option value="buisness">buisness</option>
 </select>
-<h1><a href='../blog.php'>Tillbaka</a></h1>
-<br/>
-<input class="submitWritePost" type="submit" name="submit" value="submit" /></p>
-
-</form></center>
+<br />
+<input class="submitWritePost" type="submit" name="submit" value="submit" />
+<br />
+<br />
+<div class="blogformLink">
+<a href='../blog.php'>Tillbaka</a>
+</div>
+</form> </div></center>
 
 </div>
 </body>

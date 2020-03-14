@@ -1,17 +1,19 @@
 body{
-  background: url(../uploads/keyboard-desk-wristwatch-watch-8264.jpg);
+  background-color: rgba(77, 107, 95, 0.692);
+  /*background: url(https://images.pexels.com/photos/733857/pexels-photo-733857.jpeg?cs=srgb&dl=white-blank-notebook-733857.jpg&fm=jpg);
   /*background-size:cover;
   background-repeat: no-repeat;*/
   
 }
 .container {
+  border-radius: 12px;
   font-family: Arial, Helvetica, sans-serif;
   box-shadow: 5px 5px #888888;
   background:white;
   width:80%;
   margin-right: auto;
   margin-left: auto;
-  padding-bottom:150px;
+  padding-bottom:100px;
 
 }
 
@@ -22,33 +24,32 @@ a:link {
 /* Start css code for index page */
 .headerWrapper{
   font-family: Arial, Helvetica, sans-serif;
-  border-bottom: solid 1px;
   color: #445663;
   
 }
 
 .headerText{
-  border: 1px solid black;
   margin: 5px;
   text-align: center;
 }
 
 .mainText {
-  padding-top:2rem;
+  padding-top:4rem;
   color: black;
   letter-spacing: 8px;
-  font-size: 50px;
+  font-size: 60px;
   margin: 40px;
 }
 
 .midText {
-  font-size: 15px;
+  font-size: 20px;
+  color: #445663;
 }
 
 
 .loginForms{ 
-  padding-bottom:350px;
-  margin-top:40px;
+  padding-bottom:100px;
+  margin-top:100px;
   display: flex;
   justify-content: space-around;
 }
@@ -57,23 +58,25 @@ a:link {
 
 .loginForm {
   box-shadow: 5px 5px #888888;
+  margin-top:15px;
   border-radius: 12px;
-  background: #445663;
+  background: #445663dc;
   font-family: Arial, Helvetica, sans-serif;
-  color: white;  
-  padding:10px; 
+  font-size:20px;
+  color: white;
+  padding:10px;   
 }
 
 .signupForm {
   box-shadow: 5px 5px #888888;
+  margin-top:15px;
   border-radius: 12px;
-  background: #445663;
+  background: #445663dc;
   font-family: Arial, Helvetica, sans-serif;
+  font-size:20px;
   color: white;
   padding:10px; 
 }
-
-/* End css code for index page */
 
 /* Start css code for loginForm page */
 
@@ -87,7 +90,7 @@ a:link {
 .mainTextsignIn {
     font-family: Arial, Helvetica, sans-serif;
     color: black;
-    font-size: 30px;
+    font-size: 50px;
     
   }
 
@@ -111,14 +114,14 @@ a:link {
 }
 
 .submit {
-  border-radius: 12px;
   box-shadow: 5px 5px #888888;
-  background: #445663;
+  margin-top:15px;
+  border-radius: 12px;
+  background: #445663dc;
   font-family: Arial, Helvetica, sans-serif;
   font-size:15px;
   color: white;
   padding:10px; 
-  margin:10px;
 }
 
 .account {
@@ -129,17 +132,17 @@ a:link {
 }
 
 .signUp {
-  border-radius: 12px;
   box-shadow: 5px 5px #888888;
-  background: #445663;
+  margin-top:15px;
+  border-radius: 12px;
+  background: #445663dc;
   font-family: Arial, Helvetica, sans-serif;
-  font-size:13px;
+  font-size:15px;
   color: white;
   padding:10px; 
   
 }
 
-/* End css code for loginForm page */
 
 /* Start css code for signupForm page */
 
@@ -159,29 +162,7 @@ a:link {
 }
 
 .registerSubmit {
-  border-radius: 12px;
-  margin-top:15px;
   box-shadow: 5px 5px #888888;
-  background: #445663;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size:13px;
-  color: white;
-  padding:10px; 
-}
-
-/* End css code for signupForm page */
-
-
-/* Start css code for blogform page */
-
-.textToWritePost {
-  font-size:30px;
-  margin:5px;
-  padding:15px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.submitWritePost {
   margin-top:15px;
   border-radius: 12px;
   background: #445663dc;
@@ -191,43 +172,61 @@ a:link {
   padding:10px; 
 }
 
-.submitWritePostFile {
-  
+
+
+/* Start css code for blogform page */
+
+.writeBlogForm {
   font-family: Arial, Helvetica, sans-serif;
-  font-size:13px;
+  font-size:20px;
+}
+
+.submitWritePost {
+  box-shadow: 5px 5px #888888;
+  margin-top:15px;
+  border-radius: 12px;
+  background: #445663dc;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:18px;
+  color: white;
   padding:10px; 
 }
 
 
 
-/* Start css code for blog page */
+
+
+
+/* Start css code for blog.php page */
 
 .blogHeaderText {
   font-family: Arial, Helvetica, sans-serif;
   padding-top:3rem;
   color: black;
-  font-size: 40px;
+  font-size: 60px;
   margin: 40px;
 
 }
 
 
-.signoutBlogPage{
-  border-radius: 12px;
+#signoutBlogPage{
   box-shadow: 5px 5px #888888;
-  background: #445663;
+  margin-top:15px;
+  border-radius: 12px;
+  background: #445663dc;
   font-family: Arial, Helvetica, sans-serif;
-  font-size:13px;
+  font-size:15px;
   color: white;
   padding:10px; 
 }
 
 .writeAblogLink {
-  border-radius: 12px;
   box-shadow: 5px 5px #888888;
-  background: #445663;
+  margin-top:15px;
+  border-radius: 12px;
+  background: #445663dc;
   font-family: Arial, Helvetica, sans-serif;
-  font-size:20px;
+  font-size:15px;
   color: white;
   padding:10px; 
 }
@@ -236,7 +235,6 @@ a:link {
 #titlesBlogPostsDiv {
   
   font-family: Arial, Helvetica, sans-serif;
-  
   color: black;
   font-size: 20px;
   
@@ -261,9 +259,10 @@ a:link {
 }
 
 .postedTitle {
+  font-weight: 300;
   font-family: Arial, Helvetica, sans-serif;
   color: black;
-  font-size: 50px;
+  font-size: 60px;
 }
 
 
@@ -287,39 +286,43 @@ a:link {
 
 
 .deleteBtn {
-  border-radius: 12px;
   box-shadow: 5px 5px #888888;
-  background: #445663;
+  margin-top:15px;
+  border-radius: 12px;
+  background: #445663dc;
   font-family: Arial, Helvetica, sans-serif;
-  font-size:10px;
+  font-size:15px;
   color: white;
   padding:10px; 
 
 }
 
 .updateBtn {
-  border-radius: 12px;
   box-shadow: 5px 5px #888888;
-  background: #445663;
+  margin-top:15px;
+  border-radius: 12px;
+  background: #445663dc;
   font-family: Arial, Helvetica, sans-serif;
-  font-size:10px;
+  font-size:15px;
   color: white;
   padding:10px; 
-  margin-left:20px;
 }
 
 
 .sendCommentBtn {
+  box-shadow: 5px 5px #888888;
+  margin-top:15px;
   border-radius: 12px;
-  background: #445663;
+  background: #445663dc;
   font-family: Arial, Helvetica, sans-serif;
-  font-size:13px;
+  font-size:15px;
   color: white;
-  padding:8px; 
+  padding:10px; 
 }
 
 
 .containerPost {
+  border-radius: 12px;
   font-family: Arial, Helvetica, sans-serif;
   box-shadow: 5px 5px #888888;
   background:white;
