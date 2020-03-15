@@ -10,13 +10,14 @@
 <body>
 <div class="containerPost">      
 <?php 
+//includes
 include("classes/Posts.php");
 include("includes/database_connection.php");
-include("classes/comments.php");
+
 session_start();
 
 
-
+//getting blog_postsID to show the right blog
 
 $blog_postsID = (!empty($_GET['ID']) ? $_GET['ID'] : "");
 $query = "SELECT * FROM blog_posts WHERE ID=:id LIMIT 1";
@@ -32,7 +33,7 @@ $query = "SELECT * FROM blog_posts WHERE ID=:id LIMIT 1";
 
     $post= $sth->fetch();
 
-
+// showing the blog trought getting information from database
     
     echo "<div class='blogPostedDiv'>";
      echo "<center>";
@@ -49,9 +50,9 @@ echo "<span> Category: </span>" . " " . $post['Category']. "<br/>";
     
     echo "<br/>";
 
-    
+    //if user is an Admin
     if(isset($_SESSION['Role']) && $_SESSION['Role'] == 'Admin'){
-        
+        // admin ability
         echo "<a class='deleteBtn' href='includes/handleblog.php?action=delete&id=" . $post['ID'] . "'>Delete</a></br>";
         echo "<br />";
         echo "<br />";
@@ -66,9 +67,7 @@ echo "</div>";
     
         
     } 
-  /*  // echo "<input type='hidden' name='blog_postsID' value='<?php echo  $post['ID'];?>'>";
-   // echo "<a href=\"uppgift1.php?action=delete&id=" . $post['id'] . "\" >Delete!</a>";
-    echo "<hr/>"; */
+
 
 
 
@@ -80,6 +79,7 @@ echo "</div>";
     include("views/commentForm.php");
 
     echo "<p>Comments</p>";
+    //getting  the right comments to the blog 
    $comment_query = "SELECT * FROM comments join user on comments.userID = user.ID WHERE blog_postsID=:blog_postsID ";
     $id = $_GET['id'];
 
@@ -89,7 +89,7 @@ echo "</div>";
     
     $return = $sth->execute(); 
 
-
+// showing the comments from database 
    
 
 
@@ -99,8 +99,9 @@ while($comment= $sth->fetch()){
     echo "<span class>  Namn: </span>" . " " . $comment['firstName']. " " . $comment['lastName']."<br/>";
     echo "<span> Comment: </span>" . " " . $comment['Comment']. "<br/>"; 
     echo "<span class='commentDate'> " . " " . $comment['date_posted']. "<br/> </span>";
+    //Watching if the user is an Admin
     if(isset($_SESSION['Role']) && $_SESSION['Role'] == 'Admin'){
-        
+        //Admins can delet comments. We send the comment id to the handlecomments.php so it can delete 1 specific comment
         echo "<a class='deleteComment' href='includes/handlecomments.php?action=deletecomment&id=" . $comment['ID'] . "'>Delete Comment</a></br>";
         
     }

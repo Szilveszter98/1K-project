@@ -3,7 +3,7 @@
 
 
 
-
+//classes for blogs 
 
 
 class blogposts {

@@ -13,6 +13,8 @@
 <h1 class="mainText"> MILLHOUSE BLOG'S </h1>
 <h3 class="midText"> Start writing your blog! </h3>
 
+
+<!-- inputs to create a blog -->
 <div class="writeBlogForm">
 <form method="POST" action="../includes/handleblog.php"enctype="multipart/form-data" >
 Title:<input type="text" name="title"required><br/> <br/>

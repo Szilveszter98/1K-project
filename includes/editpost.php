@@ -1,10 +1,12 @@
 <?php
     
     
-
+//includes 
 include("database_connection.php");
-session_start();
 
+
+session_start();
+// Watching if the every input is filled
 $title = (!empty($_POST['title']) ? $_POST['title'] :"");
 $description = (!empty($_POST['description']) ? $_POST['description'] : "");
 $blog_content=(!empty($_POST['blog_content']) ? $_POST['blog_content'] : "");
@@ -21,7 +23,7 @@ if(isset($_GET['action']) && $_GET['action'] == "update"){
 
 
 
-
+// if sats if samething is missing
 
 if(empty($title)){
     $errorMessages.="Your blog most have a title!";
@@ -48,6 +50,7 @@ if($errors== true){
 die;
 }
 
+//picture or file edit
 
 if(isset($_POST['submit'])) {
     if(!empty($_FILES['pictures']['name'])){

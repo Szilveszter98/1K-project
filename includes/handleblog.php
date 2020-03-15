@@ -3,7 +3,7 @@ include("database_connection.php");
 session_start();
 
 
-
+// Delete blogs
 if(isset($_GET['action']) && $_GET['action'] == "delete"){
     $postID = $_GET['id'];
      $query = "DELETE FROM blog_posts WHERE id=" . $_GET['id'];" DELETE FROM comments WHERE id=" .$_GET['id'];
@@ -17,7 +17,7 @@ if(isset($_GET['action']) && $_GET['action'] == "delete"){
   
   
 }else{
-
+// Creating blogs
 $title = (!empty($_POST['title']) ? $_POST['title'] :"");
 $description = (!empty($_POST['description']) ? $_POST['description'] : "");
 $blog_content=(!empty($_POST['blog_content']) ? $_POST['blog_content'] : "");

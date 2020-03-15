@@ -11,20 +11,21 @@
 <center>
 
 <?php 
-
+// includes
 include("classes/Posts.php");
 include("includes/database_connection.php");
 
 
-
+// session start and getting username from login
 session_start();
 if(isset($_SESSION['username'])){
     echo "<h1 class='blogHeaderText'><center>Hello  " . $_SESSION['username'] . "!<br/>";
     echo "<a id='signoutBlogPage' href='includes/logout.php'>Sign out</center></h1></a>";
 
     echo "<div id='titlesBlogPostsDiv'>";
-
+//watching if the person who loged in is an Admin or user
     if(isset($_SESSION['Role']) && $_SESSION['Role'] == 'Admin'){
+        //If Admin and they ability to create blogs
         echo "<h1><a href='views/blogForm.php'>Write a blog!</a></h1> ";
         
         
@@ -33,7 +34,7 @@ if(isset($_SESSION['username'])){
             
         } 
 
-
+// using classes (Posts.php) and writing the blogs out in a list as a link
     $Posts = new blogposts($dbh);
     $Posts->fetchAll();
     
@@ -55,7 +56,7 @@ if(isset($_SESSION['username'])){
 
 
 
- 
+ //if something was wrong with login
 
 }else{
     echo "<h1><center>något gick fel!<center></h1>";

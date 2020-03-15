@@ -4,7 +4,7 @@
 include("../includes/database_connection.php");
 
 
-
+// Watching if every input is filled
 
 $username = (!empty($_POST['username']) ? $_POST['username'] : "");
 $first_name = (!empty($_POST['firstName']) ? $_POST['firstName'] : "");
@@ -12,14 +12,14 @@ $last_name = (!empty($_POST['lastName']) ? $_POST['lastName'] : "");
 $email = (!empty($_POST['email']) ? $_POST['email'] : "");
 $password = (!empty($_POST['password']) ? md5($_POST['password']) : "");
 
-
-//kollar om username finns redan    
+//watching if the username already exist
+    
 $query_username = "SELECT * from user where username = '$username'";
 
 $sth_username = $dbh->prepare($query_username);
 $return_username= $sth_username->execute();
+// Watching if email is used already
 
-//kollar om email finn redan
 $query_email = "SELECT * from user where email = '$email'";
 
 $sth_email = $dbh->prepare($query_email);
@@ -29,7 +29,7 @@ $return_email= $sth_email->execute();
 
 
 
-
+// if username or email was used before
 
 if($sth_username->rowcount() > 0){
     
@@ -51,7 +51,7 @@ if($sth_username->rowcount() > 0){
 $errors= false;
 $errorMessages= "";
 
-
+// if some input is empty
 if(isset($_GET['action']) && $_GET['action']){
 if(empty($username)){
     $errorMessages.="Du måste ange ett användar namn!";

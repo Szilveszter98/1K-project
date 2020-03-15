@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+
+<!-- Inputs to registeration -->
 <div class="container">
 <center>
 <h1 class="mainTextRegister"> Please register an account to view the blog's!</h1>    

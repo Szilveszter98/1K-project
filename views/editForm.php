@@ -9,11 +9,11 @@
 <body>
 
 <?php 
-
+//Getting ID to which blog we want to change
 $blog_postsID = (!empty($_GET['ID']) ? $_GET['ID'] : "");
-
-
 ?>
+
+<!-- Inputs to edit blogs -->
 <br />
 <b>Uppdatera inlägg #<?php echo $blog_postsID; ?>:</b><br />
 <center>

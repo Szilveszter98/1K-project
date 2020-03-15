@@ -3,6 +3,8 @@
 include("database_connection.php");
 session_start();
 
+//Delete comments
+
 if(isset($_GET['action']) && $_GET['action'] == "deletecomment"){
     
     $commentsID= $_GET['id'];
@@ -16,6 +18,8 @@ if(isset($_GET['action']) && $_GET['action'] == "deletecomment"){
 
 
 }else{
+
+    //Creating comments
 $comment = ( !empty($_POST['comment']) ? $_POST['comment'] : "");
 $comment = htmlspecialchars($comment);
 $blog_postsID = (!empty($_POST['blog_postsID']) ? $_POST['blog_postsID'] : "");

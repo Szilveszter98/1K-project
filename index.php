@@ -18,7 +18,7 @@
 
 </div>
 
-
+<!-- // login and sign up on the main index -->
 <div class="loginForms">
 <div class="loginFormWrapper">
       
@@ -38,6 +38,8 @@
 </html>
 
 <?php 
+
+//if something is wrong with the index site, getting error back
 if (isset($_GET['err']) && $_GET['err'] == true){
     echo "error";
 }
