@@ -16,10 +16,13 @@ include("classes/Posts.php");
 include("includes/database_connection.php");
 
 
+
 session_start();
 if(isset($_SESSION['username'])){
     echo "<h1 class='blogHeaderText'><center>Hello  " . $_SESSION['username'] . "!<br/>";
-    echo "<a class='signoutBlogPage' href='includes/logout.php'>Logga ut!</center></h1></a>";
+    echo "<a id='signoutBlogPage' href='includes/logout.php'>Sign out</center></h1></a>";
+
+    echo "<div id='titlesBlogPostsDiv'>";
 
     if(isset($_SESSION['Role']) && $_SESSION['Role'] == 'Admin'){
         echo "<h1><a href='views/blogForm.php'>Write a blog!</a></h1> ";
@@ -40,13 +43,13 @@ if(isset($_SESSION['username'])){
     echo "<h1><a href='post.php?id={$post['ID']}'>{$post['Title']}</a></h1>";
    
 
-    echo "<hr/>";
+    
     
     
 
     }
 
-
+    echo "</div>";
 
 
 

@@ -50,7 +50,7 @@ if(!$return){
 
 
 
-echo "Your comment is publicated";
+echo "Your comment is posted!";
 echo "<h1><a href='../post.php?id={$_POST['blog_postsID']}'>Back to the blog!</a></h1>";
 
  

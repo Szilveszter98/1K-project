@@ -53,6 +53,8 @@ echo "<span> Category: </span>" . " " . $post['Category']. "<br/>";
     if(isset($_SESSION['Role']) && $_SESSION['Role'] == 'Admin'){
         
         echo "<a class='deleteBtn' href='includes/handleblog.php?action=delete&id=" . $post['ID'] . "'>Delete</a></br>";
+        echo "<br />";
+        echo "<br />";
         echo "<a class='updateBtn' href='views/editForm.php?action=update&id=" . $post['ID'] . "'>Update</a>";
 
 
