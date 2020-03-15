@@ -1,7 +1,7 @@
 <?php 
 
 
-include("includes/database_connection.php");
+
 
 
 
@@ -12,9 +12,7 @@ class blogposts {
     private $posts;
 
     public function __construct($dbh) {
-        
         $this->databaseHandler = $dbh;
-
     }
 
     public function fetchAll() {

@@ -1,6 +1,6 @@
 <?php
 
-include("includes/database_connection.php");
+
 
 
 
@@ -17,9 +17,9 @@ class blogcomments{
 
         
 
-       $query = "SELECT * FROM comments WHERE blog_postsID=:blog_postsID ";
+       $query_comments = "SELECT * FROM comments WHERE blog_postsID=:blog_postsID ";
 
-        $return_array = $this->databaseHandler->query($query);
+        $return_array = $this->databaseHandler->query($query_comments);
         $return_array = $return_array->fetchAll(PDO::FETCH_ASSOC);
 
         $this->comments = $return_array;
